@@ -21,9 +21,9 @@ class APIBase(FWBase):
             return headers
 
         if self.manager.settings.Authorization:
-            headers['Authorization'] = str(self.manager.group_data.token_type + ' ' + self.manager.group_data.access_token)
             if self.manager.group_data.access_token == '':
                 self.manager.api_actions_in_user.log_in()
+            headers['Authorization'] = str(self.manager.group_data.token_type + ' ' + self.manager.group_data.access_token)
 
         if accept is True:
             headers['accept'] = 'application/json'

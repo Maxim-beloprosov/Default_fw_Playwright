@@ -4,3 +4,4 @@ class GroupData:
     access_token = ''
     refresh_token = ''
     using_refresh_token = False
+
